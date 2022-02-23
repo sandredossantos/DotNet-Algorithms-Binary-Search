@@ -10,6 +10,7 @@ namespace BinarySearch.App
 
             // logarithmic runtime
             // log 2 (N) = log 2 (16) == 2 exp 4
+            // reads "logarithm of 16 to base 2"
             // the maximum value of attempts is 4
 
             var position = BinarySearch(values, 90);
