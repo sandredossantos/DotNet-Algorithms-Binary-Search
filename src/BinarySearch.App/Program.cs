@@ -6,9 +6,13 @@ namespace BinarySearch.App
     {
         static void Main(string[] args)
         {
-            var values = new int[] { 1, 3, 5, 7, 9, 10, 14, 17, 20, 55 };
+            var values = new int[] { 1, 3, 5, 7, 9, 10, 14, 17, 20, 55, 56, 57, 67, 77, 88, 90 };
 
-            var position = BinarySearch(values, 89);
+            // logarithmic runtime
+            // log 2 (N) = log 2 (16) == 2 exp 4
+            // the maximum value of attempts is 4
+
+            var position = BinarySearch(values, 90);
 
             Console.WriteLine($@"The position is {position}");
 
@@ -16,6 +20,7 @@ namespace BinarySearch.App
             {
                 var low = 0;
                 var high = values.Length - 1;
+                var attempt = 0;
 
                 while (low <= high)
                 {
@@ -34,6 +39,10 @@ namespace BinarySearch.App
                     {
                         low = middle + 1;
                     }
+
+                    attempt++;
+
+                    Console.WriteLine($@"Attempt {attempt}");
                 }
 
                 return null;
